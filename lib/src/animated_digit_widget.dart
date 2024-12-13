@@ -491,9 +491,10 @@ class _AnimatedDigitWidgetState extends State<AnimatedDigitWidget>
 
   /// value set
   set value(num newValue) {
-    _value = newValue;
-    if (mounted) {
-      setState(() {});
+    if (mounted && _value != newValue) {
+      setState(() {
+        _value = newValue;
+      });
     }
   }
 
